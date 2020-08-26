@@ -56,21 +56,19 @@ for i in range(0,n):
     oclass.append(l)
 start,end=map(int,input().split())
 oclass.sort()
-flag=0
 ans=[]
 for i in oclass:
     s=i[0]
     e=i[1]
-    if flag==0:
-        if(e>start):
-            if s<start:
-                ans.append([s,start])
-        else:
-            ans.append([s,e])
-    
-        if end>s:
-            if end<=e:
-                ans.append([end,e])
-        else:
-            ans.append([s,e])
+    if(e>start):
+        if s<start:
+            ans.append([s,start])
+    else:
+        ans.append([s,e])
+
+    if end>s:
+        if end<=e:
+            ans.append([end,e])
+    else:
+        ans.append([s,e])
 print(ans)            
