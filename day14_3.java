@@ -62,7 +62,7 @@ Explanation: pow(2,3) = 8
  */
  //Recursion
 import java.util.*;
-class Q3
+class day14_3
 {
     public static void main(String args[])
     {
