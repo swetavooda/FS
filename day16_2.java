@@ -33,7 +33,7 @@ Sample Output-2:
 */
 //dp tabulation
 import java.util.*;
-class Q1
+class day16_2
 {
     public static void main(String args[])
     {
