@@ -30,37 +30,29 @@ Sample Output:
  //TimeCOmplexity O(n)
 //without using division operator
 import java.util.*;
-class day7_1
-{
-    public static void main(String args[])
-    {
-        Scanner sc = new Scanner(System.in);
+class Test{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
         String s=sc.nextLine();
-        String[] splitArray = s.split(" ");
-        int n=splitArray.length;
+        String[] split=s.split(" ");
+        int n=split.length;
         int[] A = new int[n];
-        for (int i=0;i<splitArray.length;i++)
-        {
-            A[i]=Integer.parseInt(splitArray[i]);
+        for(int i=0;i<split.length;i++){
+            A[i]=Integer.parseInt(split[i]);
         }
-
-		int[] left = new int[n];
-		int[] right = new int[n];
-
-		left[0] = 1;
-		for (int i = 1; i < n; i++) {
-			left[i] = A[i - 1] * left[i - 1];
-		}
-
-		right[n - 1] = 1;
-		for (int j = n - 2; j >= 0; j--) {
-			right[j] = A[j + 1] * right[j + 1];
-		}
-
-		for (int i = 0; i < n; i++) {
-			A[i] = left[i] * right[i];
-			System.out.print(A[i]+" ");
-		}
-		
-	}
+        int[] left = new int[n];
+        int[] right= new int[n];
+        left[0]=1;
+        for(int i=1;i<n;i++){
+            left[i]=A[i-1]*left[i-1];
+        }
+        right[n-1]=1;
+        for(int j=n-2;j>=0;j--){
+            right[j]=A[j+1]*right[j+1];
+        }
+        for(int i=0;i<n;i++){
+            A[i]=left[i]*right[i];
+            System.out.println(A[i]+" ");
+        }
+    }
 }
